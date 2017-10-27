@@ -32,12 +32,12 @@ while (health >= 0 && lives <= 3) {
     }
 }
 
-/* need to:
+/*  need to:
+        - stop the game from playing the start of the final round
 
-
+    want to:
         - don't count grant's win as player's
         - keep health and grant positive
-        - add player interactions (prompts)
 
 
  */
