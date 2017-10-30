@@ -33,7 +33,7 @@ function getDamage(player, enemy) {
 }
 
 function startCombat() {
-    while (cont = true) {
+    while (lives <= 2) {
 
         getDamage(health, grant);
         console.log("Grant pecked " + name + ". You have " + health + " health remaining.");
