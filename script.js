@@ -2,53 +2,49 @@ var health = 40;
 var grant = 10;
 var wins = 0;
 var cont = true;
-var name = prompt("What's your name?");
-if (name === "") {
-    name = "Player"
+
+
+function getDamage() {
+    return Math.floor((Math.random() * 5) + 1);
 }
 
 function startGame() {
     var play = prompt("Would you like to play?").toLowerCase();
     if (play === "yes"){
-        //var name = prompt("What's your name?");
-        //startCombat();
-        nextRound();
+        var name = prompt("What's your name?");
+        startCombat(name);
     } else if (play !== "yes"){
         console.log("Have a great day");
     }
 }
 
-
-function nextRound() {
-    var attack = prompt("Would you like to attack or chicken out?");
-    if (attack === "attack") {
-        startCombat();
-    } else if (attack !== "attack") {
-        console.log("Bye, bye");
-    }
-}
-
-function getDamage(player, enemy) {
-    health -= Math.floor((Math.random() * 5) + 1);
-    grant -= Math.floor((Math.random() * 5) + 1);
-}
-
-function startCombat() {
+function startCombat(name) {
     while (cont = true) {
+        if (wins === 3) {
+            console.log("Congratulations, " + name + "! Grant is no more!");
+            break;
+        }
 
-        getDamage(health, grant);
-        console.log("Grant pecked " + name + ". You have " + health + " health remaining.");
-        console.log("You hit Grant! They have " + grant + " health remaining!");
-        nextRound();
+        var nextRound = prompt("Would you like to attack or chicken out?").toLowerCase();
+
+        if (nextRound === "attack") {
+            health -= getDamage();
+            grant -= getDamage();
+
+            console.log("Grant pecked " + name + ". You have " + health + " health remaining.");
+            console.log("You hit Grant! They have " + grant + " health remaining!");
+        } else if (nextRound !== "attack") {
+            console.log("You were doing so well, though.");
+            return;
+        }
 
         if (grant <= 0) {
             grant = 10;
             wins += 1;
-            console.log("Round " + lives + " won!");
-        } else if (wins === 3) {
-            console.log("Congratulations, " + name + "! Grant is no more!");
-            break;
-        } else if (health <= 0) {
+            console.log("Round " + wins + " won!");
+        }
+
+        if (health <= 0) {
             cont = false;
             console.log("Grant owned you...better luck next time");
             break;
@@ -66,14 +62,10 @@ startGame();
 
     Things that i think:
 
-    need to:
-        - stop the game from playing the start of the final round
-        - allow the user to avoid playing
-                - and skip the name prompt
 
     want to:
         - keep health and grant positive
-        -
+        - create default player name
 
 
     part 2 requirements:
