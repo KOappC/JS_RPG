@@ -1,31 +1,32 @@
 var health = 40;
 var grant = 10;
 var lives = 0;
-
+var cont = true;
+var name = prompt("What's your name?");
+if (name === "") {
+    name = "Player"
+}
 
 function startGame() {
     var play = prompt("Would you like to play?").toLowerCase();
     if (play === "yes"){
-        var name = prompt("What's your name");
-        startCombat();
-        //nextRound();
+        //var name = prompt("What's your name?");
+        //startCombat();
+        nextRound();
     } else if (play !== "yes"){
         console.log("Have a great day");
     }
 }
 
-if (name === "") {
-    name = "Player";
-}
 
-/* function nextRound() {
-    var attack = prompt("Would you like to attack or chicken out?").toLowerCase();
+function nextRound() {
+    var attack = prompt("Would you like to attack or chicken out?");
     if (attack === "attack") {
-    startCombat();
+        startCombat();
     } else if (attack !== "attack") {
-    console.log("Bye, bye");
+        console.log("Bye, bye");
     }
-} */
+}
 
 function getDamage(player, enemy) {
     health -= Math.floor((Math.random() * 5) + 1);
@@ -33,12 +34,12 @@ function getDamage(player, enemy) {
 }
 
 function startCombat() {
-    while (lives <= 2) {
+    while (cont = true) {
 
         getDamage(health, grant);
         console.log("Grant pecked " + name + ". You have " + health + " health remaining.");
         console.log("You hit Grant! They have " + grant + " health remaining!");
-        //nextRound();
+        nextRound();
 
         if (grant <= 0) {
             grant = 10;
