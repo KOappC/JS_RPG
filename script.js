@@ -1,24 +1,24 @@
-var health = 40;
-var grant = 10;
-var wins = 0;
-var cont = true;
-
+startGame();
 
 function getDamage() {
     return Math.floor((Math.random() * 5) + 1);
 }
 
 function startGame() {
-    var play = prompt("Would you like to play?").toLowerCase();
+    var play = prompt("Are you ready to rumble?!").toLowerCase();
     if (play === "yes"){
-        var name = prompt("What's your name?");
+        var name = prompt("What are we going to call you, big shot?");
         startCombat(name);
     } else if (play !== "yes"){
-        console.log("Have a great day");
+        console.log("You know where to find me, if you change your mind.");
     }
 }
 
 function startCombat(name) {
+    var health = 40;
+    var grant = 10;
+    var wins = 0;
+
     while (cont = true) {
         if (wins === 3) {
             console.log("Congratulations, " + name + "! Grant is no more!");
@@ -52,8 +52,6 @@ function startCombat(name) {
     }
 }
 
-startGame();
-
 
 
 // List of objectives
@@ -66,6 +64,7 @@ startGame();
     want to:
         - keep health and grant positive
         - create default player name
+        - add bad jokes back in and improve on them
 
 
     part 2 requirements:
