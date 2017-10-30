@@ -1,6 +1,6 @@
 var health = 40;
 var grant = 10;
-var lives = 0;
+var wins = 0;
 var cont = true;
 var name = prompt("What's your name?");
 if (name === "") {
@@ -43,9 +43,9 @@ function startCombat() {
 
         if (grant <= 0) {
             grant = 10;
-            lives += 1;
+            wins += 1;
             console.log("Round " + lives + " won!");
-        } else if (lives === 3) {
+        } else if (wins === 3) {
             console.log("Congratulations, " + name + "! Grant is no more!");
             break;
         } else if (health <= 0) {
