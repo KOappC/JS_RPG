@@ -3,12 +3,12 @@ var grant = 10;
 var lives = 0;
 
 
-
 function startGame() {
     var play = prompt("Would you like to play?").toLowerCase();
     if (play === "yes"){
         var name = prompt("What's your name");
         startCombat();
+        //nextRound();
     } else if (play !== "yes"){
         console.log("Have a great day");
     }
@@ -18,32 +18,32 @@ if (name === "") {
     name = "Player";
 }
 
+/* function nextRound() {
+    var attack = prompt("Would you like to attack or chicken out?").toLowerCase();
+    if (attack === "attack") {
+    startCombat();
+    } else if (attack !== "attack") {
+    console.log("Bye, bye");
+    }
+} */
+
 function getDamage(player, enemy) {
     health -= Math.floor((Math.random() * 5) + 1);
     grant -= Math.floor((Math.random() * 5) + 1);
 }
 
-function byeBye() {
-    console.log("Bye, bye");
-}
-
 function startCombat() {
     while (cont = true) {
-        var turn = prompt("Would you like to attack or chicken out?").toLowerCase();
-        while (turn === "attack") {
-            break;
-        } if (turn !== "attack") {
-            byeBye();
-            break;
-        }
+
         getDamage(health, grant);
         console.log("Grant pecked " + name + ". You have " + health + " health remaining.");
         console.log("You hit Grant! They have " + grant + " health remaining!");
+        //nextRound();
 
         if (grant <= 0) {
             grant = 10;
             lives += 1;
-            console.log("Round " + lives + " won!")
+            console.log("Round " + lives + " won!");
         } else if (lives === 3) {
             console.log("Congratulations, " + name + "! Grant is no more!");
             break;
@@ -90,7 +90,7 @@ startGame();
 
         5. If the user decides to attack, adjust the character’s health points and Grant’s health points based on the getDamage function.
 
-        6. If the user decides to quit, figure out a way to exit out of the loop and function.
+        //DONE  6. If the user decides to quit, figure out a way to exit out of the loop and function.
 
 
  */
