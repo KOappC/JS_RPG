@@ -80,7 +80,7 @@ function startCombat(name) {
 
         4. Each iteration of the loop will include a prompt that will ask the user if they would like to “attack” or “quit”.
 
-        5. If the user decides to attack, adjust the character’s health points and Grant’s health points based on the getDamage function.
+        //DONE 5. If the user decides to attack, adjust the character’s health points and Grant’s health points based on the getDamage function.
 
         //DONE  6. If the user decides to quit, figure out a way to exit out of the loop and function.
 
