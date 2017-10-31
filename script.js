@@ -62,46 +62,18 @@ function startCombat(name) {
 
 
     want to:
-        - keep health and grant positive
         - create default player name
-        - add bad jokes back in and improve on them
 
+    part 3 requirements:
 
-    part 2 requirements:
-
-        //DONE  1. startGame function. This function will
-                    a. Prompt the user if they would like to play, and if they say yes...
-                        i. Allow the user to enter the character’s name.
-                        ii. Call the startCombat function.
-
-        //DONE  2. startCombat function. When executed, this will run the entire loop you created in Part One.
-
-        //DONE  3. getDamage function. This will return a number between 1 and 5 that will be used to decide how much damage the user and Grant will deal each round.
-
-        4. Each iteration of the loop will include a prompt that will ask the user if they would like to “attack” or “quit”.
-
-        //DONE 5. If the user decides to attack, adjust the character’s health points and Grant’s health points based on the getDamage function.
-
-        //DONE  6. If the user decides to quit, figure out a way to exit out of the loop and function.
+        1. Each time the user is prompted, they ahve the choice either to attack, heal or quit.  Grant always attacks.
+        2. Do not allow heal if there are no heals remaining.
+        3. Grant still regenerates to 10 when his health hits 0.  Every time this happens, add 1 to the user
+            character's wins.
+        4. When the user character's wins reaches 5, Grant is defeated and the game is over.
+        5. When the user character's health reaches 0, the user is defeated and the game is over.
+        6. Continue to log health and wins at each iteration using the name entered by the user at the beginning,
+            just as in previous parts of the lab
 
 
  */
-
-
-
-// Bad jokes from the first iteration of this project
-
-/*
-
-var play = prompt("Are you ready to rumble?").toLowerCase();
-while (play !== "yes") {
-    play = prompt("How about ice cream?").toLowerCase();
-    if (play !== "yes") {
-        alert("Yeah, about that.  There isn't any ice cream...");
-    }
-    alert("Tricked you!  Round 1")
-    break;
-}
-var name = prompt("What's your name");
-
-*/
