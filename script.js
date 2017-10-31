@@ -38,7 +38,7 @@ function startCombat(player, grant) {
 
 
     while (game = true) {
-        if (player.wins === 3) {
+        if (player.wins === 5) {
             console.log("Congratulations, " + player.name + "! " + grant.name + " is no more!");
             break;
         }
@@ -94,13 +94,13 @@ function startCombat(player, grant) {
 
     part 3 requirements:
 
-        1. Each time the user is prompted, they have the choice either to attack, heal or quit.  Grant always attacks.
-        2. Do not allow heal if there are no heals remaining.
-        3. Grant still regenerates to 10 when his health hits 0.  Every time this happens, add 1 to the user
+        //DONE  1. Each time the user is prompted, they have the choice either to attack, heal or quit.  Grant always attacks.
+        //DONE  2. Do not allow heal if there are no heals remaining.
+        //DONE  3. Grant still regenerates to 10 when his health hits 0.  Every time this happens, add 1 to the user
             character's wins.
-        4. When the user character's wins reaches 5, Grant is defeated and the game is over.
-        5. When the user character's health reaches 0, the user is defeated and the game is over.
-        6. Continue to log health and wins at each iteration using the name entered by the user at the beginning,
+        //DONE  4. When the user character's wins reaches 5, Grant is defeated and the game is over.
+        //DONE  5. When the user character's health reaches 0, the user is defeated and the game is over.
+        //DONE  6. Continue to log health and wins at each iteration using the name entered by the user at the beginning,
             just as in previous parts of the lab
 
 
