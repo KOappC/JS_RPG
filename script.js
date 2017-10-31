@@ -38,10 +38,6 @@ function startCombat(player, grant) {
 
 
     while (game = true) {
-        if (player.wins === 5) {
-            console.log("Congratulations, " + player.name + "! " + grant.name + " is no more!");
-            break;
-        }
 
         var nextRound = prompt("Would you like to attack, heal or chicken out?").toLowerCase();
 
@@ -73,6 +69,11 @@ function startCombat(player, grant) {
         if (player.health <= 0) {
             game = false;
             console.log(grant.name + " owned you...better luck next time");
+            break;
+        }
+
+        if (player.wins === 5) {
+            console.log("Congratulations, " + player.name + "! " + grant.name + " is no more!");
             break;
         }
     }
