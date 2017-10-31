@@ -21,7 +21,7 @@ var grant = {
         return Math.floor((Math.random() * 3) + 1);
     }
 
-}
+};
 
 
 function startGame() {
@@ -33,24 +33,11 @@ function startGame() {
     }
 }
 
-// lab part 2
-/*
-
-function startGame() {
-    var play = prompt("Are you ready to rumble?!").toLowerCase();
-    if (play === "yes"){
-        var name = prompt("What are we going to call you, big shot?");
-        startCombat(name);
-    } else if (play !== "yes"){
-        console.log("You know where to find me, if you change your mind.");
-    }
-}
-*/
 
 function startCombat(player, grant) {
 
 
-    while (cont = true) {
+    while (game = true) {
         if (player.wins === 3) {
             console.log("Congratulations, " + player.name + "! " + grant.name + " is no more!");
             break;
@@ -62,7 +49,7 @@ function startCombat(player, grant) {
             player -= player.getDamage();
             grant -= grant.getDamage();
 
-            console.log( " pecked " + name + ". You have " + player.health + " health remaining.");
+            console.log(grant.name + " pecked " + player.name + ". You have " + player.health + " health remaining.");
             console.log("You hit " + grant.name +"! They have " + grant.grant + " health remaining!");
         } else if (nextRound !== "attack") {
             console.log("You were doing so well, though.");
@@ -72,6 +59,9 @@ function startCombat(player, grant) {
         if (nextRound === "heal" && player.healsRemaining > 0) {
             player.health += player.heal();
             player.healsRemaining -= 1;
+        } else if (nextRound === "heal" && player.healsRemaining <= 0) {
+            alert("You've used all your heals");
+            return;
         }
 
         if (grant.grant <= 0) {
@@ -81,7 +71,7 @@ function startCombat(player, grant) {
         }
 
         if (player.health <= 0) {
-            cont = false;
+            game = false;
             console.log(grant.name + " owned you...better luck next time");
             break;
         }
