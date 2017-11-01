@@ -1,10 +1,10 @@
 startGame();
 
 var player = {
+    name: "",
     wins: 0,
     health: 40,
     healsRemaining: 2,
-    name: prompt("What are we going to call your competitor?"),
     getDamage() {
         return Math.floor((Math.random() * 3) + 1);
     },
@@ -15,8 +15,8 @@ var player = {
 };
 
 var grant = {
+    name: "",
     grant: 10,
-    name: prompt("Who is your nemesis? (keep in mind this is a chicken)"),
     getDamage() {
         return Math.floor((Math.random() * 3) + 1);
     }
@@ -27,6 +27,8 @@ var grant = {
 function startGame() {
     var play = prompt("Chicken fight time!  Are you ready?").toLowerCase();
     if (play === "yes"){
+        player.name = prompt("What are we going to call you competitor? (This is your chicken)");
+        grant.name = prompt("Who is your nemesis? (Keep in mind, this is a chicken");
         startCombat()
     } else if (play !== "yes"){
         console.log("You know where to find me, if you change your mind.");
@@ -42,8 +44,8 @@ function startCombat(player, grant) {
         var nextRound = prompt("Would you like to attack, heal or chicken out?").toLowerCase();
 
         if (nextRound === "attack") {
-            player -= player.getDamage();
-            grant -= grant.getDamage();
+            player.health = player.health - player.getDamage();
+            grant.grant = grant.grant - grant.getDamage();
 
             console.log(grant.name + " pecked " + player.name + ". You have " + player.health + " health remaining.");
             console.log("You hit " + grant.name +"! They have " + grant.grant + " health remaining!");
@@ -63,7 +65,7 @@ function startCombat(player, grant) {
         if (grant.grant <= 0) {
             grant.grant = 10;
             player.wins += 1;
-            console.log("Round " + wins + " won!");
+            console.log("Round " + player.wins + " won!");
         }
 
         if (player.health <= 0) {
