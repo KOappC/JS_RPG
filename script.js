@@ -96,6 +96,9 @@ function updateScore() {
     var gameDialog = document.getElementById("gameDialog");
     roundsWon.innerText = "Rounds won: " + player.wins;
     gameDialog.innerText = player.gameDialog;
+    document.getElementById("barScore").value = player.wins;
+    document.getElementById("barPlayer").value = player.health;
+    document.getElementById("barGrant").value = grant.grant;
 
 }
 
@@ -114,7 +117,6 @@ function endGame() {
     var actionButtons = document.querySelectorAll(".actionButtons")[0];
     actionButtons.style.display = "none";
 }
-
 
 
 
