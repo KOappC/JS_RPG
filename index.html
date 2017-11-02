@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./stylesheet.css" type="text/css" rel="stylesheet">
     <title>JS_Lab_A</title>
 </head>
 <body>
-    <div id="name"></div>
-    <div id="healsRemaining"></div>
-    <div id="health"></div>
-    <div id=grantName"></div>
-    <div id="grantHealth"></div>
 
-    <button onclick="startGame()">Start game</button>
-    <button value="attack" onclick="startCombat(this.value)">Attack</button>
-    <button value="heal" onclick="startCombat(this.value)">Heal</button>
-    <button value="quit" onclick="startCombat(this.value)">Quit</button>
+    <h4>Chicken Thunderdome</h4>
+    <h5>Two chickens enter, one chicken leaves</h5>
+
+    <div class="gameDisplay">
+
+        <div class="playerInfo">
+            <div id="playerName"></div>
+            <div id="healsRemaining"></div>
+            <div id="playerHealth"></div>
+            <!-- <progress value="" max="40">Your Chicken's Health</progress> -->
+        </div>
+
+        <div class="gameScore">
+            <div id="roundsWon"></div>
+            <div id="gameDialog"></div>
+            <!-- <progress value="" max="5">Round Wins</progress> -->
+        </div>
+
+        <div class="grantInfo">
+            <div id="grantName"></div>
+            <div id="grantHealth"></div>
+            <!-- <progress value="" max="10">Their Chicken's Health</progress> -->
+        </div>
+
+    </div>
+
+    <button id="startGame" onclick="startGame()">Start game</button>
+
+    <div class="actionButtons">
+        <button value="attack" onclick="startCombat(this.value)">Attack</button>
+        <button value="heal" onclick="startCombat(this.value)">Heal</button>
+        <button value="quit" onclick="startCombat(this.value)">Quit</button>
+    </div>
 
 </body>
 </html>

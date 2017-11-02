@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Special+Elite');
+
+body {
+    background-color: #FFF1E0;
+}
+
+button {
+    background-color: #BE4248;
+    border: 1px solid #822D31;
+    border-radius: 5px;
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+    color: #E7DACB;
+    padding: 15px 32px;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 16px;
+}
+
+h4 {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+    font-family: "Special Elite", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    font-style: italic;
+}
+
+h4, h5 {
+    color: #21374B;
+}
+
+.gameDisplay {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: 0px 0px 13px 0px rgba(231, 218, 203, 0.75);
+    border-radius: 20px;
+    margin: 5%;
+    padding: 5%;
+    height: 200px;
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 400;
+}
+
+.gameScore, .playerInfo, .grantInfo {
+
+    width: 30%;
+    padding: 20px;
+    margin: 0 auto;
+    border: 2px solid #822D31;
+    border-radius: 5px;
+}
+
+.actionButtons {
+    display: none;
+    position: relative;
+    flex-direction: row;
+}
+#playerName, #grantName, #roundsWon {
+    font-size: 24px;
+    color: #21374B;
+}
+
+#gameDialog, #grantHealth, #playerHealth, #healsRemaining {
+    color: #586473;
+}
+
+#startGame {
+    background-color: #BE4248;
+    border: 1px solid #822D31;
+    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+    color: #E7DACB;
+    padding: 15px 32px;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
